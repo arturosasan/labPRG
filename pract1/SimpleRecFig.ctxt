@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=SimpleRecFig
+comment0.text=\r\n\ La\ clase\ SimpleRecFig\ incluye\ los\ elementos\ basicos\r\n\ para\ dibujar\ una\ figura\ recursivamente.\r\n\ \r\n\ @author\ PRG-DSIC-ETSINF,\ pmarques\ \r\n\ @version\ Curso\ 2024-25\r\n
+comment1.params=
+comment1.target=SimpleRecFig()
+comment1.text=No\ hay\ objetos\ de\ esta\ clase.
+comment2.params=iniOrd
+comment2.target=void\ recFig(int)
+comment2.text=\r\n\ Dibuja,\ recursivamente,\ una\ serie\ de\ cuadrados\ encadenados\r\n\ en\ una\ diagonal.\ El\ numero\ de\ cuadrados\ viene\ dado\ por\ iniOrd.\ \ \ \ \r\n\ @param\ iniOrd\ int,\ numero\ de\ cuadrados\ que\ se\ dibujan.\r\n\ PRECONDICION\:\ iniOrd\ >\=\ 1\r\n
+comment3.params=iniOrd
+comment3.target=void\ iterFig(int)
+comment3.text=\r\n\ Dibuja,\ iterativamente,\ una\ serie\ de\ cuadrados\ encadenados\r\n\ en\ una\ diagonal.\ El\ numero\ de\ cuadrados\ viene\ dado\ por\ iniOrd.\ \ \ \ \r\n\ @param\ iniOrd\ int,\ numero\ de\ cuadrados\ que\ se\ dibujan.\r\n\ PRECONDICION\:\ iniOrd\ >\=\ 1\r\n
+comment4.params=g\ ord\ l\ xSL\ ySL
+comment4.target=void\ recFig(graph2D.Graph2D,\ int,\ double,\ double,\ double)
+comment4.text=\r\n\ Dibuja,\ recursivamente,\ una\ diagonal\ de\ ord\ cuadrados,\ de\ lados\ decrecientes.\r\n\ El\ cuadrado\ mas\ grande\ tiene\ lado\ l,\ y\ el\ resto\ de\ cuadrados\r\n\ van\ reduciendo\ su\ lado\ a\ la\ mitad.\r\n\ @param\ g\ Graph2D,\ el\ espacio\ Graph2D\ donde\ se\ realiza\ el\ dibujo.\r\n\ @param\ ord\ int,\ orden\ (o\ numero)\ de\ cuadrados.\r\n\ @param\ l\ double,\ longitud\ del\ lado\ del\ cuadrado\ mayor.\r\n\ @param\ xSL\ double,\ abscisa\ de\ la\ esquina\ superior\ izquierda\ del\ cuadrado\ mayor.\r\n\ @param\ ySL\ double,\ ordenada\ de\ la\ esquina\ superior\ izquierda\ del\ cuadrado\ mayor.\r\n\ PRECONDICION\:\ ord\ >\=\ 1\ \r\n
+comment5.params=g\ ord\ l\ xSL\ ySL
+comment5.target=void\ iterFig(graph2D.Graph2D,\ int,\ double,\ double,\ double)
+comment5.text=\r\n\ Dibuja,\ iterativamente,\ una\ diagonal\ de\ ord\ cuadrados,\ de\ lados\ decrecientes.\r\n\ El\ cuadrado\ mas\ grande\ tiene\ lado\ l,\ y\ el\ resto\ de\ cuadrados\r\n\ van\ reduciendo\ su\ lado\ a\ la\ mitad.\r\n\ @param\ g\ Graph2D,\ el\ espacio\ Graph2D\ donde\ se\ realiza\ el\ dibujo.\r\n\ @param\ ord\ int,\ orden\ (o\ numero)\ de\ cuadrados.\r\n\ @param\ l\ double,\ longitud\ del\ lado\ del\ cuadrado\ mayor.\r\n\ @param\ xSL\ double,\ abscisa\ de\ la\ esquina\ superior\ izquierda\ del\ cuadrado\ mayor.\r\n\ @param\ ySL\ double,\ ordenada\ de\ la\ esquina\ superior\ izquierda\ del\ cuadrado\ mayor.\r\n\ PRECONDICION\:\ ord\ >\=\ 1\ \r\n
+comment6.params=
+comment6.target=void\ delay()
+comment6.text=Suspende\ temporalmente\ la\ ejecucion\ durante\ 300\ ms.
+numComments=7

@@ -1,0 +1,52 @@
+// COMANDOS GNUPLOT
+
+gnuplot> set xlabel "Talla"  
+gnuplot> set ylabel "Microsegundos"  
+gnuplot> set title "Selection sort"  
+gnuplot> set grid
+gnuplot> plot "selectionSort.out" using 1:2 title "selectionSort" with points
+
+// Se obtiene una tabla con puntitos para los valores del algoritmo y con los márgenes con titulo
+
+gnuplot> f(x) = a*x*x+b*x+c
+
+gnuplot> fit f(x) "selectionSort.out" using 1:2 via a,b,c                         
+iter      chisq       delta/lim  lambda   a             b             c            
+   0 2.5308707704e+16   0.00e+00  2.91e+07    1.000000e+00   1.000000e+00   1.000000e+00
+   1 2.6335817082e+13  -9.60e+07  2.91e+06    3.272218e-02   9.998845e-01   1.000000e+00
+   2 1.5909369638e+07  -1.66e+11  2.91e+05    4.903332e-04   9.998786e-01   1.000000e+00
+   3 1.2977922578e+07  -2.26e+04  2.91e+04    4.796140e-04   9.996722e-01   9.999999e-01
+   4 1.2287680767e+07  -5.62e+03  2.91e+03    4.820111e-04   9.795967e-01   9.999923e-01
+   5 1.0351288391e+06  -1.09e+06  2.91e+02    5.448170e-04   4.536260e-01   9.997958e-01
+   6 2.0581242497e+05  -4.03e+05  2.91e+01    5.670347e-04   2.675631e-01   1.000034e+00
+   7 2.0580044230e+05  -5.82e+00  2.91e+00    5.671145e-04   2.668908e-01   1.030849e+00
+   8 2.0565853494e+05  -6.90e+01  2.91e-01    5.672000e-04   2.658135e-01   3.869445e+00
+   9 2.0487241763e+05  -3.84e+02  2.91e-02    5.680943e-04   2.545455e-01   3.355979e+01
+  10 2.0486372227e+05  -4.24e+00  2.91e-03    5.681986e-04   2.532308e-01   3.702397e+01
+  11 2.0486372226e+05  -5.78e-06  2.91e-04    5.681987e-04   2.532292e-01   3.702802e+01
+iter      chisq       delta/lim  lambda   a             b             c            
+
+After 11 iterations the fit converged.
+final sum of squares of residuals : 204864
+rel. change during last iteration : -5.77801e-11
+
+degrees of freedom    (FIT_NDF)                        : 7
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 171.074
+variance of residuals (reduced chisquare) = WSSR/ndf   : 29266.2
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 0.000568199      +/- 7.445e-06    (1.31%)
+b               = 0.253229         +/- 0.08403      (33.18%)
+c               = 37.028           +/- 201.2        (543.4%)
+
+correlation matrix of the fit parameters:
+                a      b      c      
+a               1.000 
+b              -0.975  1.000 
+c               0.814 -0.909  1.000 
+
+gnuplot> replot f(x)
+
+gnuplot> print "f(", 800000, ") = ", f(800000)  
+f( 800000 ) =  363849808.301184
