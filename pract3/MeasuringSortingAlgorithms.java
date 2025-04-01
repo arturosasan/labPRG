@@ -51,7 +51,7 @@ public class MeasuringSortingAlgorithms {
      */
     private static void fillArraySortedInDescendingOrder(int[] a) { 
         for(int i = 0; i < a.length; i++){
-            a[i] = a.length - i + 1; 
+            a[i] = a.length - 1 - i; 
         }
     }
 
@@ -87,7 +87,7 @@ public class MeasuringSortingAlgorithms {
         System.out.print("#----------------------------------------\n");
 
         // COMPLETAR
-        for(int t = INITALLA; t<MAXTALLA; t += INCRTALLA){
+        for(int t = INITALLA; t<=MAXTALLA; t += INCRTALLA){
             int [] a = createArray(t);
     
             // CASO MEJOR
