@@ -9,7 +9,7 @@ import java.util.Locale;
 public class MeasuringSortingAlgorithms {
     // Constantes que definen los parametros de medida
     public static final int MAXTALLA = 10000, INITALLA = 1000; 
-    public static final int INCRTALLA = 1000;
+    public static final int INCRTALLA = 0000;
     public static final int REPETICIONESQ = 200, REPETICIONESL = 20000;
     public static final double NMS = 1e3;  // relacion micro - nanosegons
 
@@ -89,7 +89,7 @@ public class MeasuringSortingAlgorithms {
         // COMPLETAR
         for(int t = INITALLA; t<=MAXTALLA; t += INCRTALLA){
             int [] a = createArray(t);
-    
+
             // CASO MEJOR
             fillArraySortedInAscendingOrder(a);
             tt=0;
@@ -100,9 +100,9 @@ public class MeasuringSortingAlgorithms {
                 tt += tf -ti;
             }
             double tMejor = (double) tt / REPETICIONESL;
-            
+
             // CASO PEOR
-            
+
             tt=0;
             for(int r = 1; r <= REPETICIONESQ; r++) {
                 fillArraySortedInDescendingOrder(a);
@@ -112,7 +112,7 @@ public class MeasuringSortingAlgorithms {
                 tt += tf -ti;
             }
             double tPeor = (double) tt / REPETICIONESQ;
-            
+
             // CASO PROMEDIO
             tt=0;
             for(int r = 1; r <= REPETICIONESQ; r++) {
