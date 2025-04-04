@@ -9,7 +9,7 @@ import java.util.Locale;
 public class MeasuringSortingAlgorithms {
     // Constantes que definen los parametros de medida
     public static final int MAXTALLA = 10000, INITALLA = 1000; 
-    public static final int INCRTALLA = 0000;
+    public static final int INCRTALLA = 1000;
     public static final int REPETICIONESQ = 200, REPETICIONESL = 20000;
     public static final double NMS = 1e3;  // relacion micro - nanosegons
 
