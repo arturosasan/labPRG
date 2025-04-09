@@ -1,7 +1,5 @@
 package pract4.utilPRG;
 
-import java.io.*;
-
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
@@ -35,7 +33,9 @@ public class CorrectReading {
             act = t.nextInt();
             if (act < 0 || act > 4) {
                 throw new IllegalArgumentException("Error, no has introducido una opción correcta");
-            } else if (act == 0) {
+            } 
+            
+            /*else if (act == 0) {
                 System.out.println("FIN DEL MÉTODO");
                 bye = false;
             } else if (act == 1) {
@@ -75,6 +75,53 @@ public class CorrectReading {
                 }while (OK);
                 bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
                 System.out.println("Presiona cualquier tecla para finalizar el método principal");
+            }*/
+            switch (act) {
+                case 0:
+                    System.out.println("FIN DEL MÉTODO");
+                    bye = false;
+                    break;
+                case 1:
+                    System.out.println("Has elegido la Actividad 2.1");
+                    int valor1 = CorrectReading.nextInt(t, "Valor: ");
+                    bye = false;
+                    break;
+                case 2:
+                    System.out.println("Has elegido la Actividad 2.2");
+                    double valor2 = CorrectReading.nextDouble(t, "Valor: ");
+                    bye = false;
+                    break;
+                case 3:
+                    System.out.println("Has elegido la Actividad 3");
+                    double valor3 = CorrectReading.nextDoublePositive(t, "Valor: ");
+                    bye = false;
+                    break;
+                case 4:
+                System.out.println("Has elegido la Actividad 4");
+                boolean OK = true;
+                bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
+                do {
+                    try {
+                        System.out.println("Dame el valor de lowerBound");
+                        int lowerBound = t.nextInt();
+                        System.out.println("Dame el valor de upperBound");
+                        int upperBound = t.nextInt();
+                        if (lowerBound > upperBound) {throw new IllegalArgumentException("El valor lowerBound es mayor que upperBound");}
+                        if (lowerBound < upperBound) {CorrectReading.nextInt(t, "Valor: ", lowerBound, upperBound);}
+                        OK = false;
+                        //bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
+                    } catch (InputMismatchException e) {
+                        System.out.println("No marees con los datos anda");
+                    } catch (IllegalArgumentException e) {
+                        System.out.println(e.getMessage() + ", introduce ambos datos otra vez");
+                    } finally {
+                        t.nextLine();
+                        bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
+                    }
+                }while (OK);
+                bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
+                System.out.println("Presiona cualquier tecla para finalizar el método principal");
+                    break;
             }
             } catch (InputMismatchException e) {
                 System.out.println("Introduce un número por el amor de Dios");
