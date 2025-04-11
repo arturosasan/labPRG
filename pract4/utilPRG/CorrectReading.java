@@ -19,7 +19,7 @@ public class CorrectReading {
         Scanner t = new Scanner(System.in).useLocale(Locale.US);
         boolean bye = true;
         int act;
-        //System.out.println("Elige que actividad quieres comprobar de la Práctica 4");
+        boolean finished = false; // Para que no se quede en un bucle infinito
         do {
             try {
             System.out.println("Elige que actividad quieres comprobar de la Práctica 4");
@@ -93,7 +93,7 @@ public class CorrectReading {
                     break;
                 case 3:
                     System.out.println("Has elegido la Actividad 3");
-                    double valor3 = CorrectReading.nextDoublePositive(t, "Valor: ");
+                    double valor3 = CorrectReading.nextDoublePositive(t, "Valor:");
                     bye = false;
                     break;
                 case 4:
@@ -107,9 +107,9 @@ public class CorrectReading {
                         System.out.println("Dame el valor de upperBound");
                         int upperBound = t.nextInt();
                         if (lowerBound > upperBound) {throw new IllegalArgumentException("El valor lowerBound es mayor que upperBound");}
-                        if (lowerBound < upperBound) {CorrectReading.nextInt(t, "Valor: ", lowerBound, upperBound);}
+                        if (lowerBound < upperBound) {CorrectReading.nextInt(t, "Valor entre ", lowerBound, upperBound);}
                         OK = false;
-                        //bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
+                        finished = true; // Para que no se quede en un bucle infinito
                     } catch (InputMismatchException e) {
                         System.out.println("No marees con los datos anda");
                     } catch (IllegalArgumentException e) {
@@ -119,16 +119,21 @@ public class CorrectReading {
                         bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
                     }
                 }while (OK);
-                bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
+                /*bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
                 System.out.println("Presiona cualquier tecla para finalizar el método principal");
-                    break;
+                    break; */
             }
             } catch (InputMismatchException e) {
                 System.out.println("Introduce un número por el amor de Dios");
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage() + ", introduce los datos otra vez");
             }finally {
-                t.nextLine(); // Para manejar si el usuario no pone un número
+                if (finished == false) {
+                    t.nextLine(); // Para manejar si el usuario no pone un número
+                } else {
+                    //System.out.println("Presiona cualquier tecla para finalizar el método principal");
+                    bye = false; // Para que se salga del bucle, ya que si no no salen por pantalla las diferentes opciones
+                }
             }
         } while (bye);
     }
@@ -280,9 +285,10 @@ public class CorrectReading {
     public static int nextInt(Scanner sc, String msg, int lowerBound, int upperBound) {
         int value = 0;
         boolean someError = true;
+        boolean finished4 = false; // Para que no se quede en un bucle infinito
         do {
             try {
-                System.out.print(msg);
+                System.out.print(msg + lowerBound + " y " + upperBound + ": ");
                 value = sc.nextInt();
                 if (value < lowerBound || value > upperBound) {
                     throw new IllegalArgumentException("El valor " + value + " no está en el rango [" + lowerBound + "," + upperBound + "]");
@@ -297,8 +303,12 @@ public class CorrectReading {
                 System.out.println(e.getMessage());
                 //someError = false;
             } finally {
-                //System.out.println("Presiona cualquier tecla para finalizar");
-                sc.nextLine(); // Para manejar si el usuario no pone un número
+                if (finished4 == false) {
+                    sc.nextLine(); // Para manejar si el usuario no pone un número
+                } else {
+                    //System.out.println("Presiona cualquier tecla para finalizar el método principal");
+                    someError = false; // Para que no se quede en un bucle infinito
+                }
             }
         } while (someError);        
         return value;
