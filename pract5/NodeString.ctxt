@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=NodeString
+comment0.text=\r\n\ Clase\ NodeString.\r\n\r\n\ @author\ (PRG.\ ETSINF.\ UPV)\r\n\ @version\ (Curso\ 2024/25)\r\n
+comment1.params=d
+comment1.target=NodeString(java.lang.String)
+comment1.text=\ \r\n\ Crea\ un\ nodo\ con\ data\ d\ y\ con\ next\ igual\ a\ null.\ \r\n\ @param\ d\ String.\ Dato\ del\ nuevo\ nodo.\r\n
+comment2.params=d\ s
+comment2.target=NodeString(java.lang.String,\ NodeString)
+comment2.text=\ \r\n\ Crea\ un\ nodo\ con\ data\ d\ y\ next\ s.\ \r\n\ @param\ d\ String.\ Dato\ del\ nuevo\ nodo.\r\n\ @param\ s\ NodeString.\ Sucesor\ del\ nodo\ que\ se\ crea.\r\n
+numComments=3
